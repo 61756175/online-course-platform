@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Platform</title>
+</head>
+<body>
+    <h1>Welcome to the Online Course Platform</h1>
+    <h2>Available Courses</h2>
+    <ul>
+        {% for course in courses %}
+            <li>
+                <a href="{{ url_for('course', course_id=course.id) }}">{{ course.name }}</a> - {{ course.description }}
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('add_course') }}">Add a New Course</a>
+</body>
+</html>
